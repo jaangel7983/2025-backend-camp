@@ -62,7 +62,8 @@ class CreditPackageController {
       const result = await creditPackageRepo.save(newCreditPurchase)
       res.status(200).json({
         status: 'success',
-        data: result
+        data: result,
+        'total': creditPackage.length
       })
     } catch (error) {
       logger.error(error)
